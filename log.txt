@@ -1,0 +1,103 @@
+PS C:\Users\koko\github\test-git> code test.txt
+PS C:\Users\koko\github\test-git> git branch
+* main
+PS C:\Users\koko\github\test-git> git fetch 
+PS C:\Users\koko\github\test-git> git checkout -b feature/added_new_file_second_txt
+PS C:\Users\koko\github\test-git> touch third.txt
+touch : The term 'touch' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling
+of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ touch third.txt
++ ~~~~~
+    + CategoryInfo          : ObjectNotFound: (touch:String) [], CommandNotFoundException
+PS C:\Users\koko\github\test-git> code third.txt
+PS C:\Users\koko\github\test-git> git commit -m "added second and third file"
+On branch feature/added_new_file_second_txt
+Untracked files:
+        third.txt
+
+PS C:\Users\koko\github\test-git> git add .
+PS C:\Users\koko\github\test-git> git commit -m "added second and third file"
+ 2 files changed, 2 insertions(+)
+ create mode 100644 second.txt
+ create mode 100644 third.txt
+PS C:\Users\koko\github\test-git> git add .
+PS C:\Users\koko\github\test-git> git commit -m "added new line in third file"
+[feature/added_new_file_second_txt 6c3b080] added new line in third file
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+PS C:\Users\koko\github\test-git> git branch 
+* feature/added_new_file_second_txt
+  main
+PS C:\Users\koko\github\test-git> git push origin feature/added_new_file_second_txt
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (7/7), 664 bytes | 55.00 KiB/s, done.
+remote: Resolving deltas: 100% (1/1), done.
+remote:
+remote: Create a pull request for 'feature/added_new_file_second_txt' on GitHub by visiting:
+remote:      https://github.com/qomaruzzaman95/test-git/pull/new/feature/added_new_file_second_txt
+remote:
+To github.com:qomaruzzaman95/test-git.git
+PS C:\Users\koko\github\test-git> git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS C:\Users\koko\github\test-git> git fetch
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 934 bytes | 71.00 KiB/s, done.
+From github.com:qomaruzzaman95/test-git
+PS C:\Users\koko\github\test-git> git pull origin main
+Fast-forward
+ second.txt | 1 +
+ third.txt  | 3 +++
+ create mode 100644 second.txt
+ create mode 100644 third.txt
+PS C:\Users\koko\github\test-git> git checkout -b feature/added_fourth_file
+PS C:\Users\koko\github\test-git> code fourth.txt
+PS C:\Users\koko\github\test-git> git add .
+PS C:\Users\koko\github\test-git> git commit -m "tambahin fourth bang"
+[feature/added_fourth_file d227c03] tambahin fourth bang
+ 1 file changed, 1 insertion(+)
+PS C:\Users\koko\github\test-git> git branch
+* feature/added_fourth_file
+  feature/added_new_file_second_txt
+  main
+PS C:\Users\koko\github\test-git> git push feature/added_fourth_file
+fatal: 'feature/added_fourth_file' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+PS C:\Users\koko\github\test-git> git push origin feature/added_fourth_file
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 281 bytes | 281.00 KiB/s, done.
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'feature/added_fourth_file' on GitHub by visiting:
+remote:      https://github.com/qomaruzzaman95/test-git/pull/new/feature/added_fourth_file
+remote:
+To github.com:qomaruzzaman95/test-git.git
+PS C:\Users\koko\github\test-git> git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS C:\Users\koko\github\test-git> git fetch
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+From github.com:qomaruzzaman95/test-git
+PS C:\Users\koko\github\test-git> git pull origin main
+From github.com:qomaruzzaman95/test-git
+ * branch            main       -> FETCH_HEAD
+Updating 79460ae..877db36
+Fast-forward
+ fourth.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 fourth.txt
+PS C:\Users\koko\github\test-git> git checkout -b feature/added_log
+Switched to a new branch 'feature/added_log'
+PS C:\Users\koko\github\test-git> code log.txt
+PS C:\Users\koko\github\test-git> 
